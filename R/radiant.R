@@ -12,10 +12,10 @@
 #'   radiant("analytics")
 #' }
 #' @export
-radiant <- function(app = c("analytics", "marketing", "quant", "base")) {
+radiant <- function(app = c("analytics", "marketing", "quant", "base"),port = 4444) {
   if (!"package:radiant" %in% search())
     if (!require(radiant)) stop("Calling radiant start function but radiant is not installed.")
-  runApp(system.file(app[1], package = "radiant"), launch.browser = TRUE)
+  runApp(system.file(app[1], package = "radiant"), launch.browser = FALSE,port = port)
 }
 
 #' Launch Radiant - Base as an Rstudio addin
