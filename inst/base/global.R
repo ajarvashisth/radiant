@@ -54,7 +54,7 @@ if (Sys.getenv('SHINY_PORT') == "") {
   # if (!"package:radiant" %in% search())
     # sapply(r_pkgs, require, character.only = TRUE)
 } else {
-  r_local <- FALSE
+  r_local <- TRUE
   options(shiny.maxRequestSize = 10 * 1024^2)   ## limit upload filesize on server (5MB)
 }
 
